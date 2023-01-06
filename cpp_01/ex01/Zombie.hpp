@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:49:16 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/06 19:02:40 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/01/06 19:10:11 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@
 
 class Zombie {
 	public:
+		Zombie(void);
 		Zombie(std::string name);
 		~Zombie(void);
 
-		void announce(void);
+		void	announce(void);
+		void	setName(std::string name);
 
 	private:
 		std::string	_name;
 };
 
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie*	zombieHorde(int N, std::string name);
 
 #endif
