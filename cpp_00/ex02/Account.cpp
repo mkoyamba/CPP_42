@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 23:27:26 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/10/30 11:58:59 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/01/06 15:18:30 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void	Account::_displayTimestamp(void)
 
 	std::cout
 		<< "["
-		<< std::setw(2) << std::setfill('0') << 1900 + local->tm_year
+		<< std::setw(4) << std::setfill('0') << 1900 + local->tm_year
 		<< std::setw(2) << std::setfill('0') << 1 + local->tm_mon
 		<< std::setw(2) << std::setfill('0') << local->tm_mday
 		<< "_"

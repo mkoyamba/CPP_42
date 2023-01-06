@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 21:10:06 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/10/29 22:56:43 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/01/06 15:03:07 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	instruction(void)
 		return (0);
 	else if (buffer.compare("SEARCH") == 0)
 		return (1);
-	else if (buffer.compare("EXIT") == 0)
+	else if (buffer.compare("EXIT") == 0 || std::cin.eof())
 		return (2);
 	else
 		return (instruction());
