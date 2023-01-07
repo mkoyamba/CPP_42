@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/06 17:48:39 by mkoyamba          #+#    #+#              #
-#    Updated: 2023/01/06 19:46:11 by mkoyamba         ###   ########.fr        #
+#    Created: 2023/01/07 12:26:18 by mkoyamba          #+#    #+#              #
+#    Updated: 2023/01/07 12:26:47 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = clang++
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = brain
+NAME = fight
 
 INC_DIR =	.
 
