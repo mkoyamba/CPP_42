@@ -6,7 +6,7 @@
 #    By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 12:57:40 by mkoyamba          #+#    #+#              #
-#    Updated: 2023/01/07 16:58:43 by mkoyamba         ###   ########.fr        #
+#    Updated: 2023/01/07 16:59:12 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = clang++
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = convert
+NAME = operators
 
 INC_DIR =	.
 
