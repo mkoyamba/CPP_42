@@ -6,7 +6,7 @@
 #    By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 12:57:40 by mkoyamba          #+#    #+#              #
-#    Updated: 2023/01/08 12:30:58 by mkoyamba         ###   ########.fr        #
+#    Updated: 2023/01/08 12:57:19 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = clang++
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = operators
+NAME = Point
 
 INC_DIR =	.
 
