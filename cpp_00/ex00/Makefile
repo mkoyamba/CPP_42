@@ -6,11 +6,11 @@
 #    By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 11:50:20 by mkoyamba          #+#    #+#              #
-#    Updated: 2022/10/29 12:55:18 by mkoyamba         ###   ########.fr        #
+#    Updated: 2023/01/11 12:18:17 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang++
+CC = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 

@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 21:03:00 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/10/29 21:29:13 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:44:47 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,16 @@
 
 class PhoneBook {
 
-public:
-	PhoneBook(void);
-	~PhoneBook(void);
+	public:
+		PhoneBook(void);
+		~PhoneBook(void);
 
-	Contact repertory[8];
+		void	newContact(Contact &contact);
+		int		isContact(int n);
+		Contact	&contact(int n);
+
+	private:
+		Contact	_repertory[8];
 };
 
 #endif

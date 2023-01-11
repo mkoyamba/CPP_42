@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 21:10:06 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/06 15:03:07 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/01/11 14:11:02 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,85 +14,123 @@
 #include "Contact.hpp"
 #include <iostream>
 
-void	moveContact(PhoneBook *book)
-{
-	for (int n = 7; n > 0; n--)
-		book->repertory[n] = book->repertory[n - 1];
-}
-
 void	newContact(PhoneBook *book)
 {
+	Contact	newContact;
 	std::string	buffer;
 
 	std::cout << "New contact:\n\nfirstname: ";
-	std::cin >> buffer;
-	book->repertory[0].first_name = buffer;
+	std::getline(std::cin, buffer);
+	if (std::cin.eof())
+		exit(127);
+	while (!buffer.compare("") || buffer[0] == ' ')
+		std::getline(std::cin, buffer);
+	newContact.setFirst(buffer);
 	std::cout << "lastname: ";
-	std::cin >> buffer;
-	book->repertory[0].last_name = buffer;
+	if (std::cin.eof())
+		exit(127);
+	std::getline(std::cin, buffer);
+	while (!buffer.compare("") || buffer[0] == ' ')
+		std::getline(std::cin, buffer);
+	newContact.setLast(buffer);
 	std::cout << "nickname: ";
-	std::cin >> buffer;
-	book->repertory[0].nickname = buffer;
+	if (std::cin.eof())
+		exit(127);
+	std::getline(std::cin, buffer);
+	while (!buffer.compare("") || buffer[0] == ' ')
+		std::getline(std::cin, buffer);
+	newContact.setNick(buffer);
 	std::cout << "phone number: ";
-	std::cin >> buffer;
-	book->repertory[0].phone_number = buffer;
+	if (std::cin.eof())
+		exit(127);
+	std::getline(std::cin, buffer);
+	while (!buffer.compare("") || buffer[0] == ' ')
+		std::getline(std::cin, buffer);
+	newContact.setPhone(buffer);
 	std::cout << "darkest secret: ";
-	std::cin >> buffer;
-	book->repertory[0].darkest_secret = buffer;
+	if (std::cin.eof())
+		exit(127);
+	std::getline(std::cin, buffer);
+	while (!buffer.compare("") || buffer[0] == ' ')
+		std::getline(std::cin, buffer);
+	newContact.setSecret(buffer);
+	book->newContact(newContact);
 }
 
-void	displayContact(Contact contact, int n)
+void	displayContact(Contact &contact)
+{
+	std::cout << std::endl;
+	std::cout << contact.getFirst() << ' ' << contact.getLast() << ":\n\n";
+	std::cout << "First name: " << contact.getFirst() << std::endl;
+	std::cout << "Last name: " << contact.getLast() << std::endl;
+	std::cout << "Nickname name: " << contact.getNick() << std::endl;
+	std::cout << "Phone number: " << contact.getPhone() << std::endl;
+	std::cout << "Darkest secret: " << contact.getSecret() << std::endl;
+
+}
+
+void	displayBookContact(Contact contact, int n)
 {
 	int	len;
 
 	std::cout << n << "         |";
-	len = contact.first_name.length();
+	len = contact.getFirst().length();
 	for (int i = 0; i < 10; i++)
 	{
 		if (i == 9 && len > 10)
 			std::cout << ".";
 		else if (i < len)
-			std::cout << contact.first_name[i];
+			std::cout << contact.getFirst()[i];
 		else
 			std::cout << " ";
 	}
 	std::cout << "|";
-	len = contact.last_name.length();
+	len = contact.getLast().length();
 	for (int i = 0; i < 10; i++)
 	{
 		if (i == 9 && len > 10)
 			std::cout << ".";
 		else if (i < len)
-			std::cout << contact.last_name[i];
+			std::cout << contact.getLast()[i];
 		else
 			std::cout << " ";
 	}
 	std::cout << "|";
-	len = contact.nickname.length();
+	len = contact.getNick().length();
 	for (int i = 0; i < 10; i++)
 	{
 		if (i == 9 && len > 10)
 			std::cout << ".";
 		else if (i < len)
-			std::cout << contact.nickname[i];
+			std::cout << contact.getNick()[i];
 	}
 }
 
 void	searchContact(PhoneBook book)
 {
 	int	good = 0;
+	std::string	buffer;
 
 	std::cout << "Contacts: \n" << std::endl;
 	std::cout << "INDEX     |FIRST NAME|LAST NAME |NICKNAME\n" << std::endl;
 	for (int n = 0; n < 8; n++)
 	{
-		if (book.repertory[n].first_name.compare("") != 0)
+		if (book.isContact(n))
 		{
-			displayContact(book.repertory[n], n);
+			displayBookContact(book.contact(n), n + 1);
 			std::cout << std::endl;
 		}
 	}
 	std::cout << std::endl;
+	std::cout << "Quelle utilisateur voulez-vous afficher? ";
+	std::getline(std::cin, buffer);
+	if (std::cin.eof())
+		exit(127);
+	if (buffer.length() > 1 || buffer[0] < '1' || buffer[0] > '8'
+		|| !book.isContact((int)buffer[0] - 1 - '0'))
+		std::cout << "Invalid index!" << std::endl;
+	else
+		displayContact(book.contact((int)buffer[0] - 1 - '0'));
 }
 
 int	instruction(void)
@@ -100,7 +138,7 @@ int	instruction(void)
 	std::string	buffer;
 
 	std::cout << "Please, enter ADD, SEARCH or EXIT." << std::endl;
-	std::cin >> buffer;
+	std::getline(std::cin, buffer);
 	if (buffer.compare("ADD") == 0)
 		return (0);
 	else if (buffer.compare("SEARCH") == 0)
@@ -122,10 +160,7 @@ int	main(void)
 		if (n == 2)
 			return (0);
 		else if (n == 0)
-		{
-			moveContact(&book);
 			newContact(&book);
-		}
 		else
 			searchContact(book);
 	}
