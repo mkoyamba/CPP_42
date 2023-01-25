@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 21:10:06 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/11 14:11:02 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:04:48 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	displayContact(Contact &contact)
 	std::cout << "Last name: " << contact.getLast() << std::endl;
 	std::cout << "Nickname name: " << contact.getNick() << std::endl;
 	std::cout << "Phone number: " << contact.getPhone() << std::endl;
-	std::cout << "Darkest secret: " << contact.getSecret() << std::endl;
+	std::cout << "Darkest secret: " << contact.getSecret() << "\n" <<std::endl;
 
 }
 
@@ -108,7 +108,6 @@ void	displayBookContact(Contact contact, int n)
 
 void	searchContact(PhoneBook book)
 {
-	int	good = 0;
 	std::string	buffer;
 
 	std::cout << "Contacts: \n" << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:55:36 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/06 11:55:10 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:01:29 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
 		for (int n = 1; n < argc; n++)
-			for (int i = 0; i < strlen(argv[n]); i++)
+			for (size_t i = 0; i < strlen(argv[n]); i++)
 				std::cout << (char)toupper(argv[n][i]);
 	std::cout << std::endl;
 	return (0);
