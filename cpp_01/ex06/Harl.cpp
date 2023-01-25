@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:52:58 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/07 12:51:14 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:10:25 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,33 @@ void Harl::complain(std::string level) {
 	}
 	if (i == 4)
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-	else
-		for (i = i; i < 4; i++)
+	for (int n = i; n < 4; n++)
+	{
+		
+		switch(n)
 		{
-			std::cout << "[ " << levels[i] << " ]" << std::endl;
-			(this->*func[i])();
-			std::cout << std::endl;
+			case 0:
+				std::cout << "[ " << levels[n] << " ]" << std::endl;
+				(this->*func[n])();
+				std::cout << std::endl;
+				break ;
+			case 1:
+				std::cout << "[ " << levels[n] << " ]" << std::endl;
+				(this->*func[n])();
+				std::cout << std::endl;
+				break ;
+			case 2:
+				std::cout << "[ " << levels[n] << " ]" << std::endl;
+				(this->*func[n])();
+				std::cout << std::endl;
+				break ;
+			case 3:
+				std::cout << "[ " << levels[n] << " ]" << std::endl;
+				(this->*func[n])();
+				std::cout << std::endl;
+				break ;
 		}
+	}
 }
 
 void Harl::debug(void) {
