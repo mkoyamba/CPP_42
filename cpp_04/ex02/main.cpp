@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:28:18 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/28 12:43:01 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:44:47 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ int	main(void)
 		delete animal_array[i];
 		delete animal_array[i + 5];
 	}
-	//system("leaks Brain");
+	//system("leaks Abstract");
 	return (0);
 }
