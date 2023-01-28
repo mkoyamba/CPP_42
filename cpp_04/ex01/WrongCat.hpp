@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:28:29 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/12 15:09:33 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:26:34 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class WrongCat : public WrongAnimal {
 	public:
 		WrongCat(void);
 		WrongCat(const WrongCat &toCopy);
-		~WrongCat(void);
+		virtual ~WrongCat(void);
 		WrongCat &operator=(const WrongCat &toAffect);
 
 		virtual void		makeSound(void) const;

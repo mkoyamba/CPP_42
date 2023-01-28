@@ -6,7 +6,7 @@
 #    By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 14:28:20 by mkoyamba          #+#    #+#              #
-#    Updated: 2023/01/12 13:02:36 by mkoyamba         ###   ########.fr        #
+#    Updated: 2023/01/28 12:24:35 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(CC) $(CPP_FLAGS) $(OBJ) -o $(NAME)
 	
-%.o: %.c
+%.o: %.cpp
 	@$(CC) $(CPP_FLAGS) -I $(INC_DIR) -c $< -o $@
 
 clean:
