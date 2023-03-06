@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 19:33:31 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/29 13:20:10 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:18:17 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class MateriaCure : public AMateria {
 		MateriaCure(void);
 		MateriaCure(std::string const & type);
 		MateriaCure(const MateriaCure &toCopy);
-		~MateriaCure(void);
+		virtual ~MateriaCure(void);
 		MateriaCure &operator=(const MateriaCure &toAffect);
 
 		virtual std::string const & getType() const;

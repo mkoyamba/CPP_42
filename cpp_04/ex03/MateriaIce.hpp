@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 19:23:45 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/29 13:20:31 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:17:54 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class MateriaIce : public AMateria {
 		MateriaIce(void);
 		MateriaIce(std::string const & type);
 		MateriaIce(const MateriaIce &toCopy);
-		~MateriaIce(void);
+		virtual ~MateriaIce(void);
 		MateriaIce &operator=(const MateriaIce &toAffect);
 
 		virtual std::string const & getType() const;

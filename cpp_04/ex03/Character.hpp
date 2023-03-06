@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:01:22 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/29 19:20:27 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:36:19 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "ICharacter.hpp"
 # include "MateriaIce.hpp"
+# include "MateriaCure.hpp"
 
 class Character : public ICharacter {
 	public:
@@ -28,11 +29,13 @@ class Character : public ICharacter {
 		virtual void				equip(AMateria* m);
 		virtual void				unequip(int idx);
 		virtual void				use(int idx, ICharacter& target);
-		MateriaIce					*getMateria(int idx) const;
+		AMateria					*getMateria(int idx) const;
+		AMateria					*getTrash(int idx) const;
 
 	private:
 		std::string	_name;
-		MateriaIce	*_inventory[4];
+		AMateria	*_trash[10000];
+		AMateria	*_inventory[4];
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 14:28:20 by mkoyamba          #+#    #+#              #
-#    Updated: 2023/01/29 13:03:54 by mkoyamba         ###   ########.fr        #
+#    Updated: 2023/02/15 12:56:49 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC =	main.cpp\
 		MateriaCure.cpp\
 		MateriaIce.cpp\
 		AMateria.cpp\
+		Character.cpp\
 		
 
 OBJ = $(SRC:.cpp=.o)

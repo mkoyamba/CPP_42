@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 19:24:58 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/29 13:22:20 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:02:21 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ MateriaIce::MateriaIce(std::string const &type) {
 	std::cout << "MateriaIce constructor called" << std::endl;
 }
 
-MateriaIce::MateriaIce(const MateriaIce &toCopy) {
+MateriaIce::MateriaIce(const MateriaIce &toCopy) : AMateria() {
 	std::cout << "MateriaIce copy constructor called" << std::endl;
 	*this = toCopy;
 }
