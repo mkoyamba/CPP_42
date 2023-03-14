@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 12:15:35 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/08 12:41:31 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:46:51 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ Point::Point(const Point &toCopy) : _x(toCopy._x), _y(toCopy._y) {}
 
 Point::~Point(void) {}
 
-Point	&Point::operator=(const Point &toAffect) {return *this;}
+Point	&Point::operator=(const Point &toAffect) {
+	(void) toAffect;
+	return *this;
+}
 
 Fixed Point::getX(void) {return this->_x;}
 
