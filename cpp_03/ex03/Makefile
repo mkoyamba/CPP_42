@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+         #
+#    By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 12:57:40 by mkoyamba          #+#    #+#              #
-#    Updated: 2023/01/11 14:13:48 by mkoyamba         ###   ########.fr        #
+#    Updated: 2023/03/30 14:07:01 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(CC) $(CPP_FLAGS) $(OBJ) -o $(NAME)
 	
-%.o: %.c
+%.o: %.cpp
 	@$(CC) $(CPP_FLAGS) -I $(INC_DIR) -c $< -o $@
 
 clean:

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 12:58:52 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/08 14:42:50 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:06:20 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ClapTrap::attack(const std::string &target) {
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
-	if (this->_hp < amount) {
+	if ((unsigned int)this->_hp < amount) {
 		std::cout << this->_name
 					<< " takes " << this->_hp
 					<< " damages points, causing it to fall from " << this->_hp
