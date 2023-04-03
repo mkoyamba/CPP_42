@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:28:29 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/28 12:26:34 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/04/03 10:44:40 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class WrongCat : public WrongAnimal {
 		virtual ~WrongCat(void);
 		WrongCat &operator=(const WrongCat &toAffect);
 
-		virtual void		makeSound(void) const;
+		void		makeSound(void) const;
 };
 
 #endif

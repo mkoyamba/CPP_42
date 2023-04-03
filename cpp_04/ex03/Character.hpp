@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:01:22 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/02/15 13:36:19 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/04/03 10:54:27 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Character : public ICharacter {
 
 	private:
 		std::string	_name;
-		AMateria	*_trash[10000];
+		AMateria	*_trash[4];
 		AMateria	*_inventory[4];
 };
 

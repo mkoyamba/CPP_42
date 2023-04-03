@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 12:25:31 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/12 13:32:53 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/04/03 10:50:13 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain(void) {}
+Brain::Brain(void) {
+	std::cout << "Brain constructor called" << std::endl;
+}
 
 Brain::Brain(const Brain &toCopy) {	*this = toCopy; }
 
-Brain::~Brain(void) {}
+Brain::~Brain(void) {
+	std::cout << "Brain destructor called" << std::endl;
+}
 
 Brain	&Brain::operator=(const Brain &toAffect) {
 	for (int i = 0; i < 100; i++)

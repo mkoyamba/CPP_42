@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:01:24 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/02/15 13:38:09 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/04/03 10:54:51 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Character::Character(void) {
 	this->_name = "default";
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
-	for (int i = 0; i < 10000; i++)
+	for (int i = 0; i < 4; i++)
 		this->_trash[i] = NULL;
 	std::cout << "Character constructor called" << std::endl;
 }
@@ -41,13 +41,13 @@ Character	&Character::operator=(const Character &toAffect) {
 	this->_name = toAffect.getName();
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = toAffect.getMateria(i);
-	for (int i = 0; i < 10000; i++)
+	for (int i = 0; i < 4; i++)
 		this->_trash[i] = toAffect.getTrash(i);
 	return *this;
 }
 
 AMateria	*Character::getTrash(int idx) const {
-	if (idx < 0 || idx > 9999)
+	if (idx < 0 || idx > 3)
 		return NULL;
 	return this->_trash[idx];
 }
@@ -80,7 +80,7 @@ void	Character::unequip(int idx) {
 		return ;
 	while (this->_trash[i])
 		i++;
-	if (i >= 10000)
+	if (i >= 3)
 		this->_trash[0] = this->_inventory[idx];
 	else
 		this->_trash[i] = this->_inventory[idx];

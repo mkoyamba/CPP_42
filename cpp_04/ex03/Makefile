@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+         #
+#    By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 14:28:20 by mkoyamba          #+#    #+#              #
-#    Updated: 2023/02/15 12:56:49 by mkoyamba         ###   ########.fr        #
+#    Updated: 2023/04/03 11:14:20 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC =	main.cpp\
 		MateriaIce.cpp\
 		AMateria.cpp\
 		Character.cpp\
+		MateriaSource.cpp\
 		
 
 OBJ = $(SRC:.cpp=.o)

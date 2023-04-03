@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:28:18 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/02/15 13:42:10 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/04/03 11:27:22 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 #include <stdlib.h>
 
 int	main(void)
@@ -22,8 +23,15 @@ int	main(void)
 	Character	cara1("Marco");
 	Character	cara2("Polo");
 
+	MateriaSource	Source;
+
+	Source.learnMateria(materiaA);
+	Source.learnMateria(materiaB);
+	AMateria	*materiaC = Source.createMateria("cure");
+
 	std::cout << materiaA->getType() << std::endl;
 	std::cout << materiaB->getType() << std::endl;
+	std::cout << materiaC->getType() << std::endl;
 
 	cara2.equip(materiaB);
 	cara1.equip(materiaA);
@@ -43,6 +51,5 @@ int	main(void)
 	delete	materiaA;
 	delete	materiaB;
 
-	system("leaks Interface");
 	return (0);
 }

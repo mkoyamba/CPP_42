@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:28:07 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/01/28 12:34:44 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:13:51 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class AAnimal {
 	public:
 		AAnimal(void);
 		AAnimal(const AAnimal &toCopy);
-		virtual ~AAnimal(void) = 0;
+		virtual ~AAnimal(void);
 		AAnimal &operator=(const AAnimal &toAffect);
 
-		virtual void		makeSound(void) const;
+		virtual void		makeSound(void) const = 0;
 		const std::string	getType(void) const;
 
 	protected:
