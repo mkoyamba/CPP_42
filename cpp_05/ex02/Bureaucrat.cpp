@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:18:12 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/04/11 17:31:01 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:24:31 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,16 @@ void	Bureaucrat::signForm(Form &form) {
 	catch (const std::exception& e) {
 		std::cerr << this->_name << " couldn't sign " << form.getName()
 				<< " because " << e.what() << std:: endl;
+	}
+}
+
+void	Bureaucrat::executeForm(Form const & form) {
+	try {
+		form.execute(*this);
+		std::cout << *this << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e) {
+		std::cerr << *this << " can't execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
