@@ -6,7 +6,7 @@
 #    By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 12:34:17 by mkoyamba          #+#    #+#              #
-#    Updated: 2023/04/13 12:04:36 by mkoyamba         ###   ########.fr        #
+#    Updated: 2023/04/13 12:04:40 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = whatever
+NAME = iter
 
 INC_DIR =	.
 
