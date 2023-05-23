@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:16:43 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/04/12 12:34:54 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/05/23 11:35:38 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "convert.hpp"
+#include "Convert.hpp"
 
-int	main(int argc, char **argv) {
-	if (argc != 2) {
-		std::cerr << "Error: Need only 1 argument" << std::endl;
-		return 1;
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+	{
+		Convert value(argv[1]);
+		value.convert();
 	}
-	std::string	litteral(argv[1]);
-	convert(litteral);
+	else
+		std::cout << "Wrong synthax !" << std::endl;
 	return 0;
 }

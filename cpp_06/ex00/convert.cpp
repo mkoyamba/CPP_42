@@ -3,56 +3,82 @@
 /*                                                        :::      ::::::::   */
 /*   convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:22:44 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/04/13 10:45:56 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/05/23 11:34:46 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "convert.hpp"
+#include "Convert.hpp"
 
-float toFloat(std::string &litteral) {
-	return atof(litteral.c_str());
+Convert::Convert(const std::string& param) : _param(param)
+{
 }
 
-char toChar(std::string &litteral) {
-	return static_cast<char>(toFloat(litteral));
+Convert::Convert(const Convert& from)
+{
+	*this = from;
 }
 
-int toInt(std::string &litteral) {
-	return static_cast<int>(toFloat(litteral));
+Convert::~Convert()
+{
 }
 
-double toDouble(std::string &litteral) {
-	return static_cast<double>(toFloat(litteral));
+Convert& Convert::operator=(const Convert& from)
+{
+	(void) from;
+	return *this;
 }
 
-void	convert(std::string &litteral) {
-	char c = toChar(litteral);
-	int i = toInt(litteral);
-	float f = toFloat(litteral);
-	double d = toDouble(litteral);
+void	Convert::convert()
+{
+	const char	c_param = convertChar();
+	const int	i_param = convertInt();
+	const float	f_param = convertFloat();
+	const double	d_param = convertDouble();
 
-	if (f < -128 || f > 127 || isnan(f)) {
+	if (f_param < CHAR_MIN || f_param > CHAR_MAX || isnan(f_param))
 		std::cout << "char: impossible" << std::endl;
-	} else if (c > 32 && c < 127) {
-		std::cout << "char: '" << c << "'" << std::endl;
-	} else {
+	else if (isprint(c_param))
+		std::cout << "char: '" << c_param << "'" << std::endl;
+	else
 		std::cout << "char: non displayable" << std::endl;
-	}
-
-	if (i < INT_MIN || i > INT_MAX || isnan(f)) {
+	if (i_param < INT_MIN || i_param > INT_MAX || isnan(f_param))
 		std::cout << "int: impossible" << std::endl;
-	} else {
-		std::cout << "int: " << i << std::endl;
+	else
+		std::cout << "int: " << i_param << std::endl;
+	if (f_param - i_param == 0)
+	{
+		std::cout << "float: " << f_param << ".0f" << std::endl;
+		std::cout << "double: " << d_param << ".0" << std::endl;
 	}
+	else
+	{
+		std::cout << "float: " << f_param << "f" << std::endl;
+		std::cout << "double: " << d_param << std::endl;
+	}
+}
 
-	if (f - i == 0) {
-		std::cout << "float: " << f << ".0f" << std::endl;
-		std::cout << "double: " << d << ".0" << std::endl;
-	} else {
-		std::cout << "float: " << f << "f" << std::endl;
-		std::cout << "double: " << d << std::endl;
-	}
+char	Convert::convertChar()
+{
+	return static_cast<char>(convertFloat());
+}
+
+
+int	Convert::convertInt()
+{
+	return static_cast<int>(convertFloat());
+}
+
+
+float	Convert::convertFloat()
+{
+ return atof(this->_param.c_str());
+}
+
+
+double	Convert::convertDouble()
+{
+	return static_cast<double>(convertFloat());
 }

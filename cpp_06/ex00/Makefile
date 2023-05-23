@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+         #
+#    By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 12:34:17 by mkoyamba          #+#    #+#              #
-#    Updated: 2023/04/12 12:34:31 by mkoyamba         ###   ########.fr        #
+#    Updated: 2023/05/23 11:36:00 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME = convert
 INC_DIR =	.
 
 SRC =	main.cpp\
-		convert.cpp\
+		Convert.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
