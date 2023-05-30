@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 09:20:07 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/05/30 09:38:36 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/05/30 10:30:09 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ class BitcoinExchange{
 	private:
 		std::map<std::string, double> _data;
 };
+
 
 #endif
