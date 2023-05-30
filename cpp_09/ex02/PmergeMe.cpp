@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkoyamba <mkoyamba@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 09:43:08 by mkoyamba          #+#    #+#             */
-/*   Updated: 2023/05/30 10:32:59 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2023/05/30 14:07:46 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ bool	input(int ac, char **arg, std::list<int> &_list, std::deque<int> &_deque)
 	while (ss >> word) {
 		endptr = NULL;
 		l = strtol(word.c_str(), &endptr, 10);
-		if (*endptr == '\0' && l >= 0 && l < INT_MAX) {
+		if (*endptr == '\0' && l >= 0 && l <= INT_MAX) {
 			_list.push_back(l);
 			_deque.push_back(l);
 		}
